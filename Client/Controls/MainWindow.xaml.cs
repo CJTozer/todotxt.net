@@ -588,6 +588,20 @@ namespace Client
         }
 
         #endregion
+
+        #region quick filter
+
+        private void QuickFilterExecuted(object sender, RoutedEventArgs e)
+        {
+            ViewModel.QuickFilter();
+        }
+
+        private void quickFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            ViewModel.QuickFilterKeyUp(e);
+        }
+
+        #endregion
     }
 }
 

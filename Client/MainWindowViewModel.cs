@@ -468,6 +468,23 @@ namespace Client
             return filteredTasks;
         }
 
+
+        public void QuickFilter()
+        {
+            _window.quickFilter.Focus();
+        }
+
+        public void QuickFilterKeyUp(KeyEventArgs e)
+        {
+            User.Default.FilterText = _window.quickFilter.Text;
+
+            GetSelectedTasks();
+            UpdateDisplayedTasks();
+            SetSelectedTasks();
+
+            _window.quickFilter.Focus();
+        }
+
         public void ApplyFilterPreset0()
         {
             ApplyFilterPreset(0);
